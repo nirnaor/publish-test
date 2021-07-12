@@ -1,8 +1,8 @@
 language: node_js
+node_js:
+  - 14
 deploy:
   - provider: script
-    script: npx lerna publish patch --yes
+    script: lerna publish patch --yes
     skip_cleanup: true
     keep_history: true
-    on:
-      branch: master
