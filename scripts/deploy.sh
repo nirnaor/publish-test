@@ -1,1 +1,1 @@
-node node_modules/.bin/lerna publish patch --yes
+node ../node_modules/.bin/lerna publish patch --yes
