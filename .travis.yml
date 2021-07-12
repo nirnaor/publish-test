@@ -1,5 +1,8 @@
 language: node_js
 deploy:
-  provider: script
-  script: "npm run releaseAfterMerge"
-  skip_cleanup: true
+  - provider: script
+    script: npx lerna publish patch --yes
+    skip_cleanup: true
+    keep_history: true
+    on:
+      branch: master
