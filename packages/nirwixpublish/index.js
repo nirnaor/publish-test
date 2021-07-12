@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-  console.log("This is a message from the demo package1");
+  console.log("This is a message from the demo package2");
 }
