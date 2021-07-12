@@ -1,3 +1,3 @@
-export default function mainFunction() {
-	console.log('this is the main function')
+exports.printMsg = function() {
+  console.log("This is a message from the demo package");
 }
