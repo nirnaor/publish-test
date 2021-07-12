@@ -1,5 +1,5 @@
 {
-  "name": "nirwixpublish",
+  "name": "nirwixpublish-monorepo",
   "version": "1.0.0",
   "description": "testing publish flows",
   "main": "index.js",
