@@ -1,6 +1,6 @@
 {
   "name": "print-message",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "testing publish flows",
   "main": "index.js",
   "scripts": {
