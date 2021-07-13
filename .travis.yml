@@ -12,5 +12,5 @@ deploy:
   script: "npm run lerna:publishp"
   skip_cleanup: true
   on:
-    node: "10"
+    node: "14"
     branch: master
