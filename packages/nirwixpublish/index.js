@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-  console.log("This is a message from the demo package24");
+  console.log("this is the alpha version");
 }
