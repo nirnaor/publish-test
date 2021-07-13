@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-  console.log("this is 2.0.* code");
+  console.log("PRERELEASE: this is 2.0.* code");
 }
