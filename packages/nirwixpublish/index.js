@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-  console.log("this is the alpha version");
+  console.log("this is the new released version");
 }
