@@ -11,5 +11,4 @@ deploy:
   script: "npm run releaseAfterMerge"
   skip_cleanup: true
   on:
-    node: "14"
     branch: master

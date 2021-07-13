@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "releaseAfterMerge": "lerna publish patch --yes",
-    "lerna:publishp": "lerna publish from-git --yes --npm-tag beta"
+    "releaseAfterMerge": "lerna publish patch --yes"
   },
   "author": "",
   "license": "ISC",
