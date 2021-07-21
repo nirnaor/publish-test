@@ -1,15 +1,12 @@
 language: node_js
 node_js:
   - 14
-before_deploy:
-  - git config --global user.email ${GITHUB_EMAIL}
-  - git config --global user.name ${GITHUB_USER}
-  - git remote set-url origin "https://nirnaor:${GITHUB_TOKEN}@github.com/nirnaor/publish-test.git" > /dev/null 2>&1
-  - git checkout master
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
-deploy:
-  provider: script
-  script: "npm run publishNewAlpha"
-  skip_cleanup: true
-  on:
-    branch: master
+jobs: 
+  include: 
+    -stage: before_deploy
+      - git config --global user.email ${GITHUB_EMAIL}
+      - git config --global user.name ${GITHUB_USER}
+      - git remote set-url origin "https://nirnaor:${GITHUB_TOKEN}@github.com/nirnaor/publish-test.git" > /dev/null 2>&1
+      - git checkout master
+      - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+      - echo 'before deploy finished'
