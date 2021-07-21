@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-  console.log("publishing something else3");
+  console.log("publishing something else4");
 }
