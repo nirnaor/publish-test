@@ -3,13 +3,10 @@ node_js:
   - 14
 jobs: 
   include: 
-    - before_deploy
+    -stage: before_deploy
       - git config --global user.email ${GITHUB_EMAIL}
       - git config --global user.name ${GITHUB_USER}
       - git remote set-url origin "https://nirnaor:${GITHUB_TOKEN}@github.com/nirnaor/publish-test.git" > /dev/null 2>&1
       - git checkout master
       - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
-      - echo "before deploy finished"
-    - real_deploy
-  if: branch = master
-        -echo "npm run publishNewAlpha"
+      - echo 'before deploy finished'
