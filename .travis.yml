@@ -7,7 +7,7 @@ before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
   provider: script
-  script: "npm run publishNewAlpha"
+  script: "env && npm run publishNewAlpha"
   skip_cleanup: true
   on:
     branch: master
