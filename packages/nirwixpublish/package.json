@@ -1,6 +1,6 @@
 {
   "name": "nirwixpublish",
-  "version": "2.0.4-alpha.5",
+  "version": "2.0.4-alpha.6",
   "description": "testing publish flows",
   "main": "index.js",
   "scripts": {
