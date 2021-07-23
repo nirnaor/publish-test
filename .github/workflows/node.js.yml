@@ -62,15 +62,8 @@ jobs:
     - run: git config --global user.email "nirnaori@gmail.com"
     - run: git config --global user.name "Nir Naor"
     - run: git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/nirnaor/publish-test
-      env:
-        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     - run: git checkout master
-
-
-
-    - name: Authenticate with Registry
-      run: |
+    - run: |
         echo "registry=http://registry.npmjs.org/" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
         npm whoami
@@ -80,3 +73,6 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_PAT }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # env:
+        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
