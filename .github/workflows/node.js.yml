@@ -60,5 +60,5 @@ jobs:
     - run: npm run build --if-present
     - run: git remote set-url origin "https://nirnaor:${GITHUB_TOKEN}@github.com/nirnaor/publish-test.git" > /dev/null 2>&1
     - run: git checkout master
-    - run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+    - run: echo "//registry.npmjs.org/:_authToken=\${{ secrets.NPM_TOKEN }}" >> $HOME/.npmrc 2> /dev/null
     - run: npm run publishNewAlpha
