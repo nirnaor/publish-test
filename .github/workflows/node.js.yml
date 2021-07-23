@@ -60,7 +60,7 @@ jobs:
     - run: npm run build --if-present
     - run: git config --global user.email "nirnaori@gmail.com"
     - run: git config --global user.name "Nir Naor"
-    - run: git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/bennypowers/apollo-elements
+    - run: git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/nirnaor/publish-test
       env:
         GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
     - run: git checkout master
