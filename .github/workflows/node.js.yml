@@ -66,7 +66,5 @@ jobs:
     - run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }} -g
     - run: npm run publishNewAlpha
       env:
-          GH_TOKEN: ${{ secrets.GITHUB_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
