@@ -4,13 +4,16 @@
   "description": "testing publish flows",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "unit": "mocha unit",
+    "e2e": "mocha e2e",
+    "test": "npm run unit && npm run e2e",
     "releaseAlphaAsPatch": "lerna publish  --conventional-graduate --yes",
     "publishNewAlpha": "lerna publish prerelease --dist-tag next --yes"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "mocha": "^9.0.2"
   }
 }
