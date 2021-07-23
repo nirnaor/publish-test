@@ -74,13 +74,9 @@ jobs:
         echo "registry=http://registry.npmjs.org/" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
         npm whoami
+        lerna publish prerelease --dist-tag next --yes
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-    - run: lerna publish prerelease --dist-tag next --yes
-      env:
         GH_TOKEN: ${{ secrets.GITHUB_PAT }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
