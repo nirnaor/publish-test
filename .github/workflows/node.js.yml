@@ -60,10 +60,21 @@ jobs:
     - run: npm run build --if-present
     - run: git config --global user.email "nirnaori@gmail.com"
     - run: git config --global user.name "Nir Naor"
-    - run: git remote set-url origin "https://nirnaor:${GITHUB_TOKEN}@github.com/nirnaor/publish-test.git" > /dev/null 2>&1
+    - run: git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/bennypowers/apollo-elements
+      env:
+        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
     - run: git checkout master
-    - run: echo "//registry.npmjs.org/:_authToken=\${{ secrets.NPM_TOKEN }}" >> $HOME/.npmrc 2> /dev/null
-    - run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }} -g
+
+
+
+    - name: Authenticate with Registry
+      run: |
+        echo "registry=http://registry.npmjs.org/" >> .npmrc
+        echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+        npm whoami
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
     - run: npm run publishNewAlpha
       env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
