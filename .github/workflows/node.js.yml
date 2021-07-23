@@ -75,7 +75,7 @@ jobs:
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-    - run: lerna publish prerelease --dist-tag next --yes
+    - run: npm whoami && lerna publish prerelease --dist-tag next --yes
       env:
         GH_TOKEN: ${{ secrets.GITHUB_PAT }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
