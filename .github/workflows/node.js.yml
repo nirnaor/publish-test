@@ -45,7 +45,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
-    needs: [unit, e2e]
+    # needs: [unit, e2e]
     strategy:
       matrix:
         node-version: [14.16.1]
@@ -69,9 +69,5 @@ jobs:
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
         lerna publish prerelease --dist-tag next --yes
       env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        GH_TOKEN: ${{ secrets.GITHUB_PAT }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
-      # env:
         GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
