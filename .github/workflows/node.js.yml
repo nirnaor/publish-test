@@ -67,6 +67,4 @@ jobs:
         echo "registry=http://registry.npmjs.org/" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
         lerna publish prerelease --dist-tag next --yes
-      env:
-        NIRNAOR_PAT: ${{ secrets.NIRNAOR_PAT }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
