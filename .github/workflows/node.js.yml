@@ -60,8 +60,8 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
     - run: npm ci
     - run: npm run build --if-present
-    - run: git config --global user.email "nirnaori@gmail.com"
-    - run: git config --global user.name "Nir Naor"
+    - run: git config --global user.email octobot@github.com
+    - run: git config --global user.name GitHub Actions
     - run: git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/nirnaor/publish-test
     - run: git checkout master
     - run: |
