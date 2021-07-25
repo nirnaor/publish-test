@@ -4,9 +4,9 @@
   "description": "testing publish flows",
   "main": "index.js",
   "scripts": {
-    "unit": "mocha unit",
+    "ci:unit": "mocha unit",
     "ci:e2e": "mocha e2e",
-    "ci:unit": "npm run unit && npm run e2e",
+    "test": "npm run unit && npm run e2e",
     "releaseAlphaAsPatch": "lerna publish  --conventional-graduate --yes",
     "publishNewAlpha": "lerna publish prerelease --dist-tag next --yes"
   },
