@@ -63,6 +63,8 @@ jobs:
     - run: git config --global user.email "octobot@github.com"
     - run: git config --global user.name "GitHub Actions"
     - run: git remote set-url origin https://$GITHUB_ACTOR:$NIRNAOR_PAT@github.com/nirnaor/publish-test
+      env:
+        NIRNAOR_PAT: ${{ secrets.NIRNAOR_PAT }}
     - run: git checkout master
     - run: |
         echo "registry=http://registry.npmjs.org/" >> .npmrc
