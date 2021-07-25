@@ -67,4 +67,5 @@ jobs:
         echo "registry=http://registry.npmjs.org/" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
         lerna publish prerelease --dist-tag next --yes
+      env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
