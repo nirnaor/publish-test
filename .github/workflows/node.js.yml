@@ -60,7 +60,6 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
     - run: npm ci
     - run: npm run build --if-present
-    - run: git config --global user.email "octobot@github.com"
     - run: git config --global user.name "GitHub Actions"
     - run: git remote set-url origin https://$GITHUB_ACTOR:$NIRNAOR_PAT@github.com/nirnaor/publish-test
       env:
