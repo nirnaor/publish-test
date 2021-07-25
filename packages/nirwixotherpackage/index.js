@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-  console.log("this is other package should bump to alpha 29");
+  console.log("this is other package should bump to alpha 30");
 }
