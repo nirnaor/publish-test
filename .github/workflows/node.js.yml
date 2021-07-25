@@ -61,7 +61,7 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: git config --global user.name "GitHub Actions"
-    - run: git remote set-url origin https://$GITHUB_ACTOR:$NIRNAOR_PAT@github.com/nirnaor/publish-test
+    - run: git remote set-url origin https://nirnaor:$NIRNAOR_PAT@github.com/nirnaor/publish-test
       env:
         NIRNAOR_PAT: ${{ secrets.NIRNAOR_PAT }}
     - run: git checkout master
