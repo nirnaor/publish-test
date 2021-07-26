@@ -10,23 +10,23 @@ on:
     branches: [ master ]
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.16.1]
-        test-script: ["ci:unit", "ci:e2e"]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    steps:
-    - uses: actions/checkout@v2
-    - name: ${{ matrix.test-script }} with node version ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm run ${{ matrix.test-script }}
+  # tests:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       node-version: [14.16.1]
+  #       test-script: ["ci:unit", "ci:e2e"]
+  #       # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: ${{ matrix.test-script }} with node version ${{ matrix.node-version }}
+  #     uses: actions/setup-node@v2
+  #     with:
+  #       node-version: ${{ matrix.node-version }}
+  #       cache: 'npm'
+  #   - run: npm ci
+  #   - run: npm run build --if-present
+  #   - run: npm run ${{ matrix.test-script }}
   deploy:
     runs-on: ubuntu-latest
     # if: github.ref == 'refs/heads/master'
