@@ -57,7 +57,9 @@ jobs:
     - name: Push to master
       if: github.event_name == 'push'
       # run: echo "this is a push to master"
-      run: git checkout master | lerna publish prerelease --dist-tag next --yes
+      steps: 
+      - run: git checkout master
+      - run: lerna publish prerelease --dist-tag next --yes
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Push to pull request
