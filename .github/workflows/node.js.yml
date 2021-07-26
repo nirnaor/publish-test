@@ -49,6 +49,7 @@ jobs:
     - run: git config --global user.email "octocat@github.com"
     - run: git config --global user.name "GitHub Actions"
     - run: git remote set-url origin https://nirnaor@github.com/nirnaor/publish-test
+    # - run: git checkout master
     - run: |
         echo "registry=http://registry.npmjs.org/" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
@@ -57,8 +58,6 @@ jobs:
     - name: Push to master
       if: github.event_name == 'push'
       # run: echo "this is a push to master"
-      steps: 
-      run: git checkout master
       run: lerna publish prerelease --dist-tag next --yes
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
