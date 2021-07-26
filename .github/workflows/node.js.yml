@@ -54,12 +54,10 @@ jobs:
         echo "registry=http://registry.npmjs.org/" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
     - if: github.event_name == 'pull_request'
-      - run: 
-        lerna publish --canary --preid alpha --yes
+      - run: lerna publish --canary --preid alpha --yes
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - if: github.event_name == 'push'
-      - run: 
-        lerna publish prerelease --dist-tag next --yes
+      - run: lerna publish prerelease --dist-tag next --yes
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
