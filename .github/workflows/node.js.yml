@@ -43,8 +43,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         registry-url: 'https://registry.npmjs.org'
-    if: 5 == 5
-      - run: echo "this is a push to master"
+    - name: nir is crazy
+      if: 5 == 5
+      run: echo "this is a push to master"
     # - run: lerna publish --canary --preid alpha --yes
     #   env:
     #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
