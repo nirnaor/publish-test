@@ -29,7 +29,7 @@ jobs:
     - run: npm run ${{ matrix.test-script }}
   deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    # if: github.ref == 'refs/heads/master'
     # needs: [tests]
     strategy:
       matrix:
