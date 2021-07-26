@@ -64,6 +64,6 @@ jobs:
     - name: Push to pull request
       if: github.event_name == 'pull_request'
       # run: echo "PULL REQUEST PUSH"
-      run: lerna publish --canary --preid $GITHUB_HEAD_REF-$GITHUB_HEAD_REF --yes
+      run: lerna publish --canary --preid ${{ github.sha }} --yes
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
