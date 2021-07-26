@@ -43,8 +43,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         registry-url: 'https://registry.npmjs.org'
-    - name: nir is crazy
+    - name: Push to master
       if: github.event_name == 'push'
+      run: echo "this is a push to master"
+    - name: Push to pull request
+      if: github.event_name == 'pull_request'
       run: echo "this is a push to master"
     # - run: lerna publish --canary --preid alpha --yes
     #   env:
