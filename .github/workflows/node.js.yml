@@ -43,8 +43,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         registry-url: 'https://registry.npmjs.org'
-    - if: "nir" == "pull_request"
-      - run: echo "this is false"
+      - if: "nir" == "pull_request"
+        - run: echo "this is false"
     # - run: lerna publish --canary --preid alpha --yes
     #   env:
     #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
