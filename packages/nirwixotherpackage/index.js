@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-  console.log("canary stuff different commit");
+  console.log("canary stuff different commit2");
 }
