@@ -44,7 +44,6 @@ jobs:
         cache: 'npm'
         registry-url: 'https://registry.npmjs.org'
       if: contains(github.event_name, "push")
-      steps:
         - run: echo "this is a push to master"
     # - run: lerna publish --canary --preid alpha --yes
     #   env:
