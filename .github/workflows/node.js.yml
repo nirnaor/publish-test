@@ -30,7 +30,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/master'
-    needs: [tests]
+    # needs: [tests]
     strategy:
       matrix:
         node-version: [14.16.1]
