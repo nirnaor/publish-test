@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-  console.log("canary stuff different commit4");
+  console.log("this is a release from master branch.");
 }
