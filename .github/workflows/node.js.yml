@@ -48,7 +48,7 @@ jobs:
       run: echo "this is a push to master"
     - name: Push to pull request
       if: github.event_name == 'pull_request'
-      run: echo "this is a push to master"
+      run: echo "PULL REQUEST PUSH"
     # - run: lerna publish --canary --preid alpha --yes
     #   env:
     #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
