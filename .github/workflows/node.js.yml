@@ -44,7 +44,7 @@ jobs:
         cache: 'npm'
         registry-url: 'https://registry.npmjs.org'
     - name: nir is crazy
-      if: 5 == 5
+      if: github.event_name == 'push'
       run: echo "this is a push to master"
     # - run: lerna publish --canary --preid alpha --yes
     #   env:
