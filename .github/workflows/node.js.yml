@@ -43,8 +43,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         registry-url: 'https://registry.npmjs.org'
-      - if: "nir" == "pull_request"
-        - run: echo "this is false"
+      if: contains(github.event_name, "push")
+      steps:
+        - run: echo "this is a push to master"
     # - run: lerna publish --canary --preid alpha --yes
     #   env:
     #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
