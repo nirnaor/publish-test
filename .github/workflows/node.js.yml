@@ -55,11 +55,13 @@ jobs:
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
     - name: Push to master
       if: github.event_name == 'push'
+      # run: echo "this is a push to master"
       run: lerna publish prerelease --dist-tag next --yes
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Push to pull request
       if: github.event_name == 'pull_request'
+      # run: echo "PULL REQUEST PUSH"
       run: lerna publish --canary --preid alpha --yes
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
