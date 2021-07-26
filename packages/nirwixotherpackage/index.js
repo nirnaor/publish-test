@@ -1,3 +1,3 @@
 exports.printMsg = function() {
-  console.log("PULL_REQUEST_CODE3");
+  console.log("PULL_REQUEST_CODE4");
 }
