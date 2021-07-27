@@ -23,6 +23,7 @@ jobs:
           cd photography-pro-gallery
           ls
           pwd
+          echo "registry=https://npm.dev.wixpress.com" >> .npmrc
           node create-pr.js
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
