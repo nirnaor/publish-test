@@ -19,7 +19,7 @@ jobs:
         #   ref: refs/heads/master
       - run: |
           git clone https://${NIRNAOR_PAT}@github.com/wix-private/photography-pro-gallery.git
-          yarn config set @wix:registry https://npm.dev.wixpress.com<Paste>
+          yarn config set @wix:registry https://npm.dev.wixpress.com
           ls
           cd photography-pro-gallery
           ls
