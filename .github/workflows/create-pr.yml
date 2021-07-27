@@ -14,10 +14,13 @@ jobs:
         node-version: [14.16.1]
     steps:
       - uses: actions/checkout@master
-        with:
-          name: wix-private/photography-pro-gallery
-          ref: refs/heads/master
+        # with:
+        #   name: wix-private/photography-pro-gallery
+        #   ref: refs/heads/master
       - run: |
+          git clone wix-private/photography-pro-gallery
+          ls
+          cd photography-pro-gallery
           ls
           node create-pr.js
         env:
