@@ -18,11 +18,11 @@ jobs:
         #   name: wix-private/photography-pro-gallery
         #   ref: refs/heads/master
       - run: |
-          git clone https://github.com/wix-private/photography-pro-gallery.git
+          git clone https://${NIRNAOR_PAT}@github.com/wix-private/photography-pro-gallery.git
           ls
           cd photography-pro-gallery
           ls
           node create-pr.js
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
+          NIRNAOR_PAT: ${{ secrets.NIRNAOR_PAT }}
