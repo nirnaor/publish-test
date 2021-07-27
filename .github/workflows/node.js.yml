@@ -5,9 +5,9 @@ name: Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master2 ]
   pull_request:
-    branches: [ master ]
+    branches: [ master2]
 
 jobs:
   # tests:
@@ -58,11 +58,8 @@ jobs:
       if: github.event_name == 'push'
       # run: echo "this is a push to master"
       run: |
-        # git checkout master
-        # lerna publish prerelease --dist-tag next --yes
-        git clone https://github.com/wix-private/photography-pro-gallery.git
-        cd photography-pro-gallery
-        node create-pr
+        git checkout master
+        lerna publish prerelease --dist-tag next --yes
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Push to pull request
