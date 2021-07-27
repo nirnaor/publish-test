@@ -18,7 +18,7 @@ jobs:
           name: wix-private/photography-pro-gallery
           ref: refs/heads/master
       - run: |
-          pwd
-          node create-pr
+          ls
+          node create-pr.js
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
