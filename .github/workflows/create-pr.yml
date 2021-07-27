@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@master
         with:
           name: wix-private/photography-pro-gallery
-          ref: refs/heads/release
+          ref: refs/heads/master
       - run: |
           pwd
           node create-pr
