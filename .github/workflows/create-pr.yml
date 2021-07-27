@@ -18,7 +18,7 @@ jobs:
         #   name: wix-private/photography-pro-gallery
         #   ref: refs/heads/master
       - run: |
-          git clone wix-private/photography-pro-gallery
+          git clone https://github.com/wix-private/photography-pro-gallery.git
           ls
           cd photography-pro-gallery
           ls
