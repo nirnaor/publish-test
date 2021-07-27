@@ -17,7 +17,7 @@ jobs:
         with:
           name: wix-private/photography-pro-gallery
           ref: refs/heads/release
-        run: |
+      - run: |
           pwd
           node create-pr
         env:
