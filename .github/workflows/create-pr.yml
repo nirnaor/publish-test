@@ -24,3 +24,5 @@ jobs:
           node create-pr.js
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: /tmp
+
