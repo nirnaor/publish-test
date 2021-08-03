@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "ci:unit": "mocha unit",
-    "ci:integration": "jest",
+    "ci:integration": "jest --ci --reporters=default --reporters=jest-junit",
     "ci:e2e": "mocha e2e",
     "test": "npm run unit && npm run e2e",
     "releaseAlphaAsPatch": "lerna publish  --conventional-graduate --yes",
