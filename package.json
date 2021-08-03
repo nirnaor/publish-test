@@ -7,7 +7,7 @@
     "ci:unit": "MOCHA_FILE=ci-test-reoprts/mocha-unit-junit.xml mocha unit --reporter mocha-junit-reporter",
     "ci:integration": "jest --ci --reporters=jest-junit",
     "ci:e2e": "mocha e2e",
-    "test": "npm run unit && npm run e2e",
+    "test": "npm run ci:unit && npm run ci:integration",
     "releaseAlphaAsPatch": "lerna publish  --conventional-graduate --yes",
     "publishNewAlpha": "lerna publish prerelease --dist-tag next --yes"
   },
