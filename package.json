@@ -4,7 +4,7 @@
   "description": "testing publish flows",
   "main": "index.js",
   "scripts": {
-    "ci:unit": "mocha unit",
+    "ci:unit": "MOCHA_FILE=ci-test-reoprts/mocha-unit-junit.xml mocha unit --reporter mocha-junit-reporter",
     "ci:integration": "jest --ci --reporters=jest-junit",
     "ci:e2e": "mocha e2e",
     "test": "npm run unit && npm run e2e",
@@ -24,6 +24,7 @@
     "jest": "^27.0.6",
     "jest-junit": "^12.2.0",
     "lerna": "^4.0.0",
-    "mocha": "^9.0.2"
+    "mocha": "^9.0.2",
+    "mocha-junit-reporter": "^2.0.0"
   }
 }
