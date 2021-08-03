@@ -15,7 +15,8 @@ jobs:
     strategy:
       matrix:
         node-version: [14.16.1]
-        test-script: ["ci:unit", "ci:e2e", "ci:integration"]
+        # test-script: ["ci:unit", "ci:e2e", "ci:integration"]
+        test-script: ["ci:unit", "ci:integration"]
         # test-script: ["ci:integration"]
     steps:
     - uses: actions/checkout@v2
@@ -28,12 +29,16 @@ jobs:
     - run: npm run build --if-present
     - run: npm run ${{ matrix.test-script }}
     - name: Test Report
-      uses: dorny/test-reporter@v1
-      if: success() || failure()    # run this step even if previous step failed
+    - name: Publish Test Report
+      uses: mikepenz/action-junit-report@v2
       with:
-        name: Test report           # Name of the check run which will be created
-        path: ci-test-reoprts/*.xml    # Path to test results
-        reporter: jest-junit        # Format of test results
+        report_paths: 'ci-test-reports/*.xml'
+      # uses: dorny/test-reporter@v1
+      # if: success() || failure()    # run this step even if previous step failed
+      # with:
+      #   name: Test report           # Name of the check run which will be created
+      #   path: ci-test-reoprts/*.xml    # Path to test results
+      #   reporter: jest-junit        # Format of test results
   # deploy:
   #   runs-on: ubuntu-latest
   #   # if: github.ref == 'refs/heads/master'
