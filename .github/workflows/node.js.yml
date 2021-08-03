@@ -15,8 +15,8 @@ jobs:
     strategy:
       matrix:
         node-version: [14.16.1]
-        # test-script: ["ci:unit", "ci:e2e", "ci:integration"]
-        test-script: ["ci:integration"]
+        test-script: ["ci:unit", "ci:e2e", "ci:integration"]
+        # test-script: ["ci:integration"]
     steps:
     - uses: actions/checkout@v2
     - name: ${{ matrix.test-script }} with node version ${{ matrix.node-version }}
