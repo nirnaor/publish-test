@@ -28,7 +28,6 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm run ${{ matrix.test-script }}
-    - name: Test Report
     - name: Publish Test Report
       uses: mikepenz/action-junit-report@v2
       with:
