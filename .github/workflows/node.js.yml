@@ -40,7 +40,7 @@ jobs:
       #   reporter: jest-junit        # Format of test results
   deploy:
     runs-on: ubuntu-latest
-    # if: github.ref == 'refs/heads/master'
+    if: github.event_name == 'pull_request'
     needs: [tests]
     strategy:
       matrix:
