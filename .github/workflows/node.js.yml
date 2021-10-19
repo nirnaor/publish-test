@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.16.1]
+        node-version: [16.0.0]
         # test-script: ["ci:unit", "ci:e2e", "ci:integration"]
         test-script: ["ci:unit", "ci:integration"]
         # test-script: ["ci:integration"]
