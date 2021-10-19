@@ -41,7 +41,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     # if: github.event_name == 'pull_request'
-    needs: [tests]
+    # needs: [tests]
     strategy:
       matrix:
         node-version: [14.16.1]
