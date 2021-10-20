@@ -39,7 +39,7 @@ jobs:
       if: github.event_name == 'push'
       run: |
         git checkout master
-        lerna publish prerelease --dist-tag next --yes
+        lerna publish prerelease --dist-tag next --yes --no-verify-access
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         GH_TOKEN: ${{ secrets.GITHUB_PAT }}
