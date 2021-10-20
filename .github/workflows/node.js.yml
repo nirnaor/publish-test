@@ -26,13 +26,10 @@ jobs:
     - run: npm run build --if-present
     - run: git config --global user.email "octocat@github.com"
     - run: git config --global user.name "GitHub Actions"
-    # - run: git remote set-url origin https://nirnaor@github.com/publish-test
-    # - run: git remote set-url origin git@github.com:nirnaor/publish-test.git
     - run: git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/nirnaor/publish-test
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         GITHUB_PAT: ${{ secrets.NIR_PAT }}
-
     - run: |
         echo "registry=https://registry.npmjs.org/" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
@@ -40,18 +37,9 @@ jobs:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - name: Push to master
       if: github.event_name == 'push'
-      # run: echo "this is a push to master"
       run: |
         git checkout master
         lerna publish prerelease --dist-tag next --yes
-      env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        GH_TOKEN: ${{ secrets.GITHUB_PAT }}
-        GITHUB_TOKEN: ${{ secrets.NIR_PAT }}
-    - name: Push to pull request
-      if: github.event_name == 'pull_request' && github.actor != 'dependabot' 
-      # run: echo "PULL REQUEST PUSH"
-      run: lerna publish --canary --preid ${{ github.sha }} --yes
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         GH_TOKEN: ${{ secrets.GITHUB_PAT }}
