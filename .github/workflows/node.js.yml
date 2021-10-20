@@ -27,7 +27,12 @@ jobs:
     - run: git config --global user.email "octocat@github.com"
     - run: git config --global user.name "GitHub Actions"
     # - run: git remote set-url origin https://nirnaor@github.com/publish-test
-    - run: git remote set-url origin git@github.com:nirnaor/publish-test.git
+    # - run: git remote set-url origin git@github.com:nirnaor/publish-test.git
+    - run: git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_PAT@github.com/nirnaor/publish-test
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GITHUB_PAT: ${{ secrets.NIR_PAT }}
+
     - run: |
         echo "registry=https://registry.npmjs.org/" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
@@ -48,4 +53,3 @@ jobs:
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         GH_TOKEN: ${{ secrets.GITHUB_PAT }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
