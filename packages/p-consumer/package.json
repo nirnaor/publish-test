@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nirwixotherpackage": "^1.0.0"
+    "nirwixotherpackage": "2.0.9-alpha.31"
   }
 }
