@@ -26,7 +26,8 @@ jobs:
     - run: npm run build --if-present
     - run: git config --global user.email "octocat@github.com"
     - run: git config --global user.name "GitHub Actions"
-    - run: git remote set-url origin https://nirnaor@github.com/publish-test
+    # - run: git remote set-url origin https://nirnaor@github.com/publish-test
+    - run: git remote set-url origin git@github.com:nirnaor/publish-test.git
     - run: |
         echo "registry=https://registry.npmjs.org/" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
