@@ -46,6 +46,8 @@ jobs:
         lerna publish prerelease --dist-tag next --yes
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_PAT }}
+        GITHUB_TOKEN: ${{ secrets.NIR_PAT }}
     - name: Push to pull request
       if: github.event_name == 'pull_request' && github.actor != 'dependabot' 
       # run: echo "PULL REQUEST PUSH"
