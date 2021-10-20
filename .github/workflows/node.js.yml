@@ -46,3 +46,4 @@ jobs:
       run: lerna publish --canary --preid ${{ github.sha }} --yes
       env:
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.NIR_PAT }}
