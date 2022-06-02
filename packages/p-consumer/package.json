@@ -1,6 +1,6 @@
 {
   "name": "p-consumer",
-  "version": "2.0.9-alpha.34",
+  "version": "3.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nirwixotherpackage": "2.0.9-alpha.34"
+    "nirwixotherpackage": "3.0.0"
   }
 }
